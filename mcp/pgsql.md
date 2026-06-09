@@ -27,7 +27,7 @@ npm install -g postgres-mcp
 
 ### 2. 项目级配置（仅当前项目生效）
 
-bash
+```bash
 cd /path/to/your/project
 
 claude mcp add --scope project postgres \
@@ -35,10 +35,15 @@ claude mcp add --scope project postgres \
   -e ACCESS_MODE=restricted \
   -- npx -y postgres-mcp
 
-
+# 最简单粗暴
+claude mcp add --scope project postgres \
+  -e POSTGRES_CONNECTION_STRING="postgresql://user:pass@host:5432/mydb" \
+  -e ACCESS_MODE=unrestricted \
+  -- npx -y postgres-mcp
+```
 生成的配置文件位于：`./.mcp.json`
 
-json
+```json
 {
   "mcpServers": {
     "postgres": {
@@ -51,7 +56,7 @@ json
     }
   }
 }
-
+```
 
 ### 3. 权限模式说明
 
