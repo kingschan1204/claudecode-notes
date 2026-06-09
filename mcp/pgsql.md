@@ -74,9 +74,9 @@ claude mcp add --scope project postgres \
 
 ### `.env`（不提交 Git）
 
-env
+```env
 POSTGRES_CONNECTION_STRING=postgresql://user:pass@localhost:5432/mydb
-
+```
 
 ### `.gitignore`
 
@@ -87,15 +87,15 @@ gitignore
 
 ### 加载环境变量
 
-bash
+```bash
 source .env
-
+```
 
 ---
 
 ## 四、验证是否生效
 
-bash
+```bash
 查看 MCP Server 列表
 
 claude mcp list
@@ -113,7 +113,7 @@ claude mcp list
 
 /mcp
 
-
+```
 ---
 
 ## 五、跨机器同步说明
@@ -124,20 +124,20 @@ claude mcp list
 ### 新机器前置条件
 
 1. **Node.js ≥ 18**
-bash
+```bash
 node --version
-
+```
 
 2. **配置环境变量**
-bash
+```bash
 export POSTGRES_CONNECTION_STRING="..."
-
+```
 
 3. **数据库可访问**
-bash
+```bash
 pg_isready -h host -p 5432
 psql "$POSTGRES_CONNECTION_STRING"
-
+```
 
 📌 首次运行时会由 `npx` 自动下载依赖，稍作等待即可。
 
@@ -146,27 +146,27 @@ psql "$POSTGRES_CONNECTION_STRING"
 ## 六、常见问题排查
 
 ### 1. npx 下载超时
-bash
+```bash
 npm install -g postgres-mcp
 修改 .mcp.json 中 command 为 postgres-mcp
 
-
+```
 
 ### 2. PostgreSQL 连接失败
 - 检查 `pg_hba.conf`
 - 云数据库需加 `?sslmode=require`
 
 ### 3. 权限不足
-sql
+```sql
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO user;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public
 GRANT SELECT ON TABLES TO user;
-
+```
 
 ### 4. JSON 语法错误
-bash
+```bash
 python3 -m json.tool .mcp.json
-
+```
 
 ---
 
@@ -192,8 +192,7 @@ python3 -m json.tool .mcp.json
 ---
 
 ## 九、参考命令速查
-
-bash
+```bash
 添加
 
 claude mcp add --scope project postgres ...
@@ -210,7 +209,7 @@ MCP 状态
 
 /mcp
 
-
+```
 ---
 
 > 💡 **核心记住一句话**：  
