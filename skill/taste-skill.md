@@ -1,4 +1,5 @@
-PS C:\financial\aicode-demo> npx skills add https://github.com/Leonxlnx/taste-skill
+```bash
+ C:\financial\aicode-demo> npx skills add https://github.com/Leonxlnx/taste-skill
 Need to install the following packages:
 skills@1.5.11
 Ok to proceed? (y) y
@@ -250,5 +251,6 @@ Ok to proceed? (y) y
 
 │
 └  Done!  Review skills before use; they run with full agent permissions.
+```
 
 PS C:\financial\aicode-demo>  
