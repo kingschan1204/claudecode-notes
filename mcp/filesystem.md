@@ -34,3 +34,7 @@ claude mcp add filesystem -- npx -y filesystem-slim@latest /目录1 /目录2
 > “请列出 `~/Projects` 下的文件结构”
 
 若能正常返回，说明配置成功。
+
+```
+claude mcp add filesystem -- npx -y filesystem-slim@latest C:\financial\aicode-demo C:\financial\financial-data-python
+```
